@@ -120,7 +120,7 @@
   #if DISABLED(BLTOUCH)
     #define Z_MIN_PROBE_PIN                 PC5   // Probe (Proximity switch) port
   #else
-    #define Z_MIN_PROBE_PIN                 PB7
+    #define Z_MIN_PROBE_PIN                 Z_STOP_PIN
   #endif
 #endif
 
@@ -480,6 +480,8 @@
     #define LCD_PINS_D4              EXP1_05_PIN
 
     #if ENABLED(FYSETC_MINI_12864)
+      #define SOFTWARE_SPI
+      #define FORCE_SOFT_SPI
       #define DOGLCD_CS              EXP1_03_PIN
       #define DOGLCD_A0              EXP1_04_PIN
       //#define LCD_BACKLIGHT_PIN           -1
